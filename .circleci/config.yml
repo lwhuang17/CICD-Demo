@@ -26,8 +26,9 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           ##- v1-dependencies-
       
-      # Install command to upload to github pages
-      - run: sudo npm install -g angular-cli-ghpages
+      - run: 
+          name: Install angular-cli-ghpages
+          command: sudo npm install -g angular-cli-ghpages
 
       - run: 
           name: Install Packages
