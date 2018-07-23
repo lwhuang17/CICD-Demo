@@ -39,11 +39,13 @@ jobs:
           #key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: npm test
+      - run: 
+          name: Run unit tests
+          command: yarn test
           
       - run: 
           name: Generate Build
-          command: ng build --prod --output-path docs --base-href "CICD-Demo"
+          command: yarn ng -- build --prod --output-path docs --base-href "CICD-Demo"
 
       # Deploy to github pages
       - run:
