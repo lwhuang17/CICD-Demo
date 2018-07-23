@@ -35,7 +35,7 @@ jobs:
       - run: 
           name: Deploy to github pages
           command: |
-            git push https://github.com/lwhuang17/CICD-Demo.git master
+            git add . && git commit -m"Deploy" && git push https://github.com/lwhuang17/CICD-Demo.git master
 
 workflows:
   version: 2
