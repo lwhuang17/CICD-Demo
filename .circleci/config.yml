@@ -34,7 +34,8 @@ jobs:
           command: 'cp docs/index.html docs/404.html'
       - run: 
           name: Deploy to github pages
-          command: ngh
+          command: |
+            git push https://github.com/lwhuang17/CICD-Demo.git master
 
 workflows:
   version: 2
