@@ -29,9 +29,6 @@ jobs:
       - run: 
           name: build production
           command: npm run build-prod
-  
-  deploy:
-    steps:
       - run:
           name: Copy index.html to 404.html
           command: 'cp docs/index.html docs/404.html'
@@ -43,10 +40,7 @@ workflows:
   version: 2
   build_and_deploy:
     jobs:
-      - build
-      - deploy:
-          requires:
-            - build
+      - build:
           filters:
             branches:
               only: master
