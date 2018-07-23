@@ -35,7 +35,7 @@ jobs:
       - run:
           name: Copy index.html to 404.html
           command: 'cp docs/index.html docs/404.html'
-      -run: 
+      - run: 
           name: Deploy to github pages
           command: ngh
 
