@@ -11,6 +11,9 @@ jobs:
       - run:
           name: Update npm
           command: 'sudo npm install -g npm@latest'
+      - run:
+          name: NPM install angular-cli-ghpages
+          command: 'sudo npm install -g angular-cli-ghpages'
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
@@ -21,24 +24,27 @@ jobs:
           paths:
             - node_modules
       - run: 
+          name: run unit tests
+          command: npm run test
+      - run: 
           name: build production
           command: npm run build-prod
-
-  test:
-    docker:
-      - image: circleci/node:8.11.3
+  
+  deploy:
     steps:
-      - checkout
       - run:
-          name: Test
-          command: npm test
+          name: Copy index.html to 404.html
+          command: 'cp docs/index.html docs/404.html'
+      -run: 
+          name: Deploy to github pages
+          command: ngh
 
 workflows:
   version: 2
-  build_and_test:
+  build_and_deploy:
     jobs:
       - build
-      - test:
+      - deploy:
           requires:
             - build
           filters:
