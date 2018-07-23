@@ -1,0 +1,35 @@
+
+.global-container {
+    font-family: sans-serif;
+    text-align: center;
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        border-radius: 10px;
+        background-color: #2196F3;
+        padding: 10px;
+        width: 315px;
+        margin: auto;
+      }
+    
+    .display {
+        grid-column: 1 / 5;
+        text-align: right !important;
+    }
+    
+    .grid-item {
+        background-color: #323232;
+        color: white;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+    }
+    
+    .operators {
+        background-color: #F89403;
+        color: white;
+    }
+}

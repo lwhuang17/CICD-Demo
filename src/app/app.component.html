@@ -1,0 +1,31 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="global-container">
+  <h1>
+    Simple Calculator
+  </h1>
+  <div class="grid-container">
+    <div class="grid-item display"> 
+        {{ displayNumber() }}
+    </div>
+
+    <div class="grid-item" (click)="setInput(1);">1</div>
+    <div class="grid-item" (click)="setInput(2);">2</div>
+    <div class="grid-item" (click)="setInput(3);">3</div>  
+    <div class="grid-item operators" (click)="setOperator('add');">+</div> 
+
+    <div class="grid-item" (click)="setInput(4);">4</div>
+    <div class="grid-item" (click)="setInput(5);">5</div>
+    <div class="grid-item" (click)="setInput(6);">6</div> 
+    <div class="grid-item operators" (click)="setOperator('subtract');">-</div>  
+
+    <div class="grid-item" (click)="setInput(7);">7</div>
+    <div class="grid-item" (click)="setInput(8);">8</div>
+    <div class="grid-item" (click)="setInput(9);">9</div>  
+    <div class="grid-item operators" (click)="setOperator('multiply');">×</div> 
+
+    <div class="grid-item" (click)="clear();">C</div>
+    <div class="grid-item" (click)="setInput(0);">0</div>
+    <div class="grid-item" (click)="equals()">=</div>  
+    <div class="grid-item operators" (click)="setOperator('divide');">÷</div>
+  </div>
+</div>
