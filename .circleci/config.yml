@@ -1,54 +1,46 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
 version: 2
 jobs:
   build:
-    docker:
-      # specify the version you desire here
-      - image: circleci/node:8.11.3
-      
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
     working_directory: ~/repo
+    # The primary container is an instance of the first image listed. The job's commands run in this container.
+    docker:
+      - image: circleci/node:8.11.3
 
     steps:
       - checkout
-
-      # Download and cache dependencies
-      ##- restore_cache:
-          ##keys:
-          ##- v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          ##- v1-dependencies-
-      
-      - run: 
-          name: Install angular-cli-ghpages
-          command: sudo npm install -g angular-cli-ghpages
-
-      - run: 
-          name: Install Packages
-          command: sudo npm install
-
-       #- save_cache:
-          #paths:
-            #- node_modules
-          #key: v1-dependencies-{{ checksum "package.json" }}
-
-      # run tests!
-      - run: 
-          name: Run unit tests
-          command: yarn test
-          
-      - run: 
-          name: Generate Build
-          command: yarn ng -- build --prod --output-path docs --base-href "CICD-Demo"
-
-      # Deploy to github pages
       - run:
-          name: Deploy to Github Pages
-          comand: ngh
+          name: Update npm
+          command: 'sudo npm install -g npm@latest'
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install npm packages
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - run: 
+          name: build production
+          command: npm run build-prod
+
+  test:
+    docker:
+      - image: circleci/node:8.11.3
+    steps:
+      - checkout
+      - run:
+          name: Test
+          command: npm test
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
