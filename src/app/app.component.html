@@ -1,31 +1,119 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="global-container">
-  <h1 style="color: orange">
-    Simple Calculator
+  <h1>
+    iOS Calculator App
   </h1>
   <div class="grid-container">
     <div class="grid-item display"> 
         {{ displayNumber() }}
     </div>
 
-    <div class="grid-item" (click)="setInput(1);">1</div>
-    <div class="grid-item" (click)="setInput(2);">2</div>
-    <div class="grid-item" (click)="setInput(3);">3</div>  
-    <div class="grid-item operators" (click)="setOperator('add');">+</div> 
+   <!-- Row 1 --> 
+    <div class="grid-item">
+        <div class="inner-wrapper inner-wrapper-special-funct" (click)="clear();">
+            {{ input1 ? 'C' : 'AC' }}
+        </div>
+    </div>
+    <div class="grid-item">
+        <div class="inner-wrapper inner-wrapper-special-funct">
+            +/−
+        </div>
+    </div>
+    <div class="grid-item">
+        <div class="inner-wrapper inner-wrapper-special-funct" (click)="percent()">
+            %
+        </div>
+    </div>
+    <div class="grid-item">
+        <div class="inner-wrapper inner-wrapper-operators" [class.active-operator]="operator === 'divide'" (click)="setOperator('divide');">
+            ÷
+        </div>
+    </div>
 
-    <div class="grid-item" (click)="setInput(4);">4</div>
-    <div class="grid-item" (click)="setInput(5);">5</div>
-    <div class="grid-item" (click)="setInput(6);">6</div> 
-    <div class="grid-item operators" (click)="setOperator('subtract');">-</div>  
+    <!-- Row 2 --> 
+    <div class="grid-item">
+        <div class="inner-wrapper inner-wrapper-numbers" (click)="setInput(7);">
+            7
+        </div>
+    </div>
+    <div class="grid-item">
+        <div class="inner-wrapper inner-wrapper-numbers" (click)="setInput(8);">
+            8
+        </div>
+    </div>
+    <div class="grid-item">
+        <div class="inner-wrapper inner-wrapper-numbers" (click)="setInput(9);">
+            9
+        </div>
+    </div>
+    <div class="grid-item">
+        <div class="inner-wrapper inner-wrapper-operators" [class.active-operator]="operator === 'multiply'" (click)="setOperator('multiply');">
+            ×
+        </div>
+    </div> 
 
-    <div class="grid-item" (click)="setInput(7);">7</div>
-    <div class="grid-item" (click)="setInput(8);">8</div>
-    <div class="grid-item" (click)="setInput(9);">9</div>  
-    <div class="grid-item operators" (click)="setOperator('multiply');">×</div> 
+    <!-- Row 3 --> 
+    <div class="grid-item">
+        <div class="inner-wrapper inner-wrapper-numbers" (click)="setInput(4);">
+            4
+        </div>
+    </div>
+    <div class="grid-item">
+        <div class="inner-wrapper inner-wrapper-numbers" (click)="setInput(5);">
+            5
+        </div>
+    </div>
+    <div class="grid-item">
+        <div class="inner-wrapper inner-wrapper-numbers" (click)="setInput(6);">
+            6
+        </div>
+    </div>
+    <div class="grid-item">
+        <div class="inner-wrapper inner-wrapper-operators" [class.active-operator]="operator === 'subtract'" (click)="setOperator('subtract');">
+            −
+        </div>
+    </div> 
 
-    <div class="grid-item" (click)="clear();">C</div>
-    <div class="grid-item" (click)="setInput(0);">0</div>
-    <div class="grid-item" (click)="equals()">=</div>  
-    <div class="grid-item operators" (click)="setOperator('divide');">÷</div>
+    <!-- Row 4 --> 
+    <div class="grid-item">
+        <div class="inner-wrapper inner-wrapper-numbers" (click)="setInput(1);">
+            1
+        </div>
+    </div>
+    <div class="grid-item">
+        <div class="inner-wrapper inner-wrapper-numbers" (click)="setInput(2);">
+            2
+        </div>
+    </div>
+    <div class="grid-item">
+        <div class="inner-wrapper inner-wrapper-numbers" (click)="setInput(3);">
+            3
+        </div>
+    </div>
+    <div class="grid-item">
+        <div class="inner-wrapper inner-wrapper-operators" [class.active-operator]="operator === 'add'" (click)="setOperator('add');">
+            +
+        </div>
+    </div> 
+
+    <!-- Row 5 --> 
+    <div class="grid-item zero">
+        <div class="inner-wrapper-zero inner-wrapper-numbers" (click)="setInput(0);">
+            0
+        </div>
+    </div>
+
+    <div class="grid-item">
+        <div class="inner-wrapper inner-wrapper-numbers">
+            .
+        </div>
+    </div>
+
+    <div class="grid-item">
+        <div class="inner-wrapper inner-wrapper-operators" (click)="equals();">
+            =
+        </div>
+    </div>
+     
   </div>
 </div>

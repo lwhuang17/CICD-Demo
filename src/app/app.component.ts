@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { THIS_EXPR } from '../../node_modules/@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-root',
@@ -28,6 +27,10 @@ export class AppComponent {
 
     divide (input1: number, input2: number): number {
         return input1 / input2;
+    }
+
+    percent(): void {
+        this.input1 = this.input1 / 100;
     }
 
     calculate(): number {
