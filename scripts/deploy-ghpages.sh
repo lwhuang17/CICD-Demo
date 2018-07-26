@@ -19,7 +19,7 @@ git status
 # stage any changes and new files
 git add -A
 # now commit, ignoring branch gh-pages doesn't seem to work, so trying skip
-git commit --allow-empty -m "Deploy to GitHub pages"
+git commit -m"Deploy to GitHub pages"
 # and push, but send any output to /dev/null to hide anything sensitive
 git push --force --quiet origin master
 
