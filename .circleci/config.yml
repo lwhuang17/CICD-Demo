@@ -35,7 +35,6 @@ jobs:
       - run: 
           name: Deploy to github pages
           command: |
-            chmod+x scripts/deploy-ghpages.sh
             ./scripts/deploy-ghpages.sh
 workflows:
   version: 2
