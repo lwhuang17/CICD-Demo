@@ -15,7 +15,7 @@ $inner-wrapper-number-dim: 70px;
         width: 366px;
         margin: auto;
     }
-    
+
     .display {
         grid-column: 1 / 5;
         text-align: right !important;
@@ -23,7 +23,7 @@ $inner-wrapper-number-dim: 70px;
         font-size: 90px !important;
         cursor: default;
     }
-    
+
     .grid-item {
         background-color: #000000;
         color: white;
@@ -47,13 +47,13 @@ $inner-wrapper-number-dim: 70px;
         }
 
         .inner-wrapper-special-funct {
-            background-color: #A6A6A6;
+            background-color: #a6a6a6;
             color: black;
             font-size: 30px;
             &:active {
-                background-color: #D9D9D9;
+                background-color: #d9d9d9;
             }
-        }     
+        }
 
         .inner-wrapper-numbers {
             background-color: #323232;
@@ -65,11 +65,11 @@ $inner-wrapper-number-dim: 70px;
         }
 
         .inner-wrapper-operators {
-            background-color: #F89403;
+            background-color: #f89403;
             color: white;
             font-size: 45px;
             &:active {
-                background-color: #FBC78D;
+                background-color: #fbc78d;
             }
         }
 
@@ -78,9 +78,9 @@ $inner-wrapper-number-dim: 70px;
             color: orange !important;
         }
     }
-    
+
     .operators {
-        background-color: #F89403;
+        background-color: #f89403;
         color: white;
     }
 

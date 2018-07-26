@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
-
 export class AppComponent {
     public input1 = 0;
     public input2 = 0;
@@ -13,19 +12,19 @@ export class AppComponent {
 
     private _displayNumber = 0;
 
-    add (input1: number, input2: number): number {
+    add(input1: number, input2: number): number {
         return input1 + input2;
     }
 
-    subtract (input1: number, input2: number): number {
+    subtract(input1: number, input2: number): number {
         return input1 - input2;
     }
 
-    multiply (input1: number, input2: number): number {
+    multiply(input1: number, input2: number): number {
         return input1 * input2;
     }
 
-    divide (input1: number, input2: number): number {
+    divide(input1: number, input2: number): number {
         return input1 / input2;
     }
 
@@ -80,5 +79,4 @@ export class AppComponent {
         this.input2 = 0;
         this.operator = '';
     }
-
 }
