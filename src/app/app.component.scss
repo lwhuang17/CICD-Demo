@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
 $inner-wrapper-number-dim: 70px;
-
 .global-container {
     font-family: 'Open Sans', sans-serif;
     text-align: center;
-
+    .title {
+        color: #b76e79;
+    }
     .grid-container {
         display: grid;
         grid-template-columns: auto auto auto auto;
@@ -15,7 +15,6 @@ $inner-wrapper-number-dim: 70px;
         width: 366px;
         margin: auto;
     }
-
     .display {
         grid-column: 1 / 5;
         text-align: right !important;
@@ -23,14 +22,12 @@ $inner-wrapper-number-dim: 70px;
         font-size: 90px !important;
         cursor: default;
     }
-
     .grid-item {
         background-color: #000000;
         color: white;
         padding: 10px;
         text-align: center;
         cursor: pointer;
-
         .inner-wrapper {
             width: $inner-wrapper-number-dim;
             height: $inner-wrapper-number-dim;
@@ -39,13 +36,11 @@ $inner-wrapper-number-dim: 70px;
             align-items: center;
             justify-content: center;
         }
-
         .inner-wrapper-zero {
             border-radius: 30px;
             padding-left: 25px;
             height: 65px;
         }
-
         .inner-wrapper-special-funct {
             background-color: #a6a6a6;
             color: black;
@@ -54,7 +49,6 @@ $inner-wrapper-number-dim: 70px;
                 background-color: #d9d9d9;
             }
         }
-
         .inner-wrapper-numbers {
             background-color: #323232;
             color: white;
@@ -63,7 +57,6 @@ $inner-wrapper-number-dim: 70px;
                 background-color: #727272;
             }
         }
-
         .inner-wrapper-operators {
             background-color: #f89403;
             color: white;
@@ -72,18 +65,15 @@ $inner-wrapper-number-dim: 70px;
                 background-color: #fbc78d;
             }
         }
-
         .active-operator {
             background-color: white !important;
             color: orange !important;
         }
     }
-
     .operators {
         background-color: #f89403;
         color: white;
     }
-
     .zero {
         grid-column: 1 / 3;
         text-align: left !important;
