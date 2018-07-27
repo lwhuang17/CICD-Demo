@@ -10,8 +10,6 @@ export class AppComponent {
     public input2 = 0;
     public operator = '';
 
-    private _displayNumber = 0;
-
     add(input1: number, input2: number): number {
         return input1 + input2;
     }
@@ -48,6 +46,12 @@ export class AppComponent {
     }
 
     setInput(num: number) {
+        const temp = parseInt(this.input1.toString() + num.toString(), 10);
+
+        // Block number from being larger than 8 figures
+        if ((temp / Math.pow(10, 8)) >= 1) {
+            return;
+        }
         if (!this.operator) {
             // Set Input 1
             this.input1 = parseInt(this.input1.toString() + num.toString(), 10);
@@ -64,10 +68,12 @@ export class AppComponent {
     }
 
     displayNumber() {
+        let returnNumber: number;
         if (this.operator && this.input2) {
-            return this.input2;
+            returnNumber = this.input2;
         }
-        return this.input1;
+        returnNumber = this.input1;
+        return returnNumber.toLocaleString('en');
     }
 
     setOperator(operator: string) {
