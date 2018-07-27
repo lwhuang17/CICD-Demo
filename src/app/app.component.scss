@@ -17,10 +17,12 @@ $inner-wrapper-number-dim: 70px;
         margin: auto;
     }
     .display {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
         grid-column: 1 / 5;
-        text-align: right !important;
         height: 120px;
-        font-size: 90px !important;
+        font-size: 65px;
         cursor: default;
     }
     .grid-item {
