@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+declare var require: any;
+const { version } = require('package.json');
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
@@ -9,6 +11,7 @@ export class AppComponent {
     public input1 = 0;
     public input2 = 0;
     public operator = '';
+    public app_version = version;
 
     add(input1: number, input2: number): number {
         return input1 + input2;
