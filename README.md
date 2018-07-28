@@ -1,6 +1,6 @@
-# SimpleCalculator
+# Simple IOS Calculator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8. Access the [demo-site](https://lwhuang17.github.io/CICD-Demo/).
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8. 
 
 ## Development server
 
