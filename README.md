@@ -1,6 +1,8 @@
-# Simple IOS Calculator
+[![CircleCI](https://circleci.com/gh/lwhuang17/simple-ios-calculator.svg?style=svg)](https://circleci.com/gh/lwhuang17/simple-ios-calculator)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8. 
+# Simple iOS Calculator
+
+A simple iOS themed calculator web app.
 
 ## Development server
 
