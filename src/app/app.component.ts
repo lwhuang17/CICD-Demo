@@ -52,7 +52,7 @@ export class AppComponent {
         const temp = parseInt(this.input1.toString() + num.toString(), 10);
 
         // Block number from being larger than 8 figures
-        if ((temp / Math.pow(10, 8)) >= 1) {
+        if (temp / Math.pow(10, 8) >= 1) {
             return;
         }
         if (!this.operator) {
